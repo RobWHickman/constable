@@ -28,9 +28,14 @@ pub struct Party{
     pub logo_file: String
 }
 
-pub struct ElectionResult{
+pub struct PartyResult{
+    pub party: Party,
+    pub votes: i64
+}
+
+pub struct ConstituencyResult{
     pub constituency: Constituency,
     pub winner: Party,
     pub majority: i64,
-    pub results: Vec<ElectionResult>
+    pub results: Vec<PartyResult>
 }
