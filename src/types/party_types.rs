@@ -1,4 +1,4 @@
-const PARTY_COLUMNS: &[&str] = &[
+pub const PARTY_COLUMNS: &[&str] = &[
     "Con",
     "Lab",
     "LD",
@@ -14,7 +14,7 @@ const PARTY_COLUMNS: &[&str] = &[
     "All other candidates",
 ];
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub enum Parties {
     Labour,
     Conservatives,
@@ -78,7 +78,7 @@ pub struct Party {
 }
 
 impl Party {
-    pub fn new(party_string: &str) -> Self {
+    pub fn from_string(party_string: &str) -> Self {
         let party_enum = Parties::from(party_string);
         Party {
             name: party_enum,
