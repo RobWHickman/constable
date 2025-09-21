@@ -1,6 +1,6 @@
+mod read;
 mod types;
 mod utils;
-mod read;
 
 use std::error::Error;
 
@@ -11,8 +11,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     for result in constituency_results {
         if result.constituency.name == "North Down" {
             println!("{:?}", result);
+        }
     }
-}
 
     Ok(())
 }

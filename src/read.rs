@@ -1,7 +1,7 @@
 use crate::types::results_types::ConstituencyResult;
 use csv::Reader;
-use std::fs::File;
 use std::error::Error;
+use std::fs::File;
 
 pub fn read_results_file(file_name: &str) -> Result<Vec<ConstituencyResult>, Box<dyn Error>> {
     let election_results_file = File::open(file_name)?;
