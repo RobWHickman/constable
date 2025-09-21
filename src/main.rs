@@ -21,7 +21,6 @@ fn main() -> Result<(), Box<dyn Error>> {
         if i < 5{
             println!("{:?}", record);
             println!("{:?}", record.get(0));
-            println!("{:?}", headers)
         }   
         i += 1;
     }

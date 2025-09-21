@@ -1,3 +1,18 @@
+const PARTY_COLUMNS: &[&str] = &[
+    "Con",
+    "Lab",
+    "LD",
+    "RUK",
+    "Green",
+    "SNP",
+    "PC",
+    "DUP",
+    "SF",
+    "SDLP",
+    "UUP",
+    "APNI",
+    "All other candidates",
+];
 
 #[derive(Debug, Clone, Copy)]
 pub enum Parties {
@@ -8,10 +23,10 @@ pub enum Parties {
     Reform,
     PlaidCymru,
     ScottishNational,
-    Other
+    Other,
 }
 
-impl From<&str> for Parties{
+impl From<&str> for Parties {
     fn from(party_string: &str) -> Self {
         match party_string {
             "Lab" => Parties::Labour,
@@ -21,14 +36,13 @@ impl From<&str> for Parties{
             "RUK" => Parties::Reform,
             "PC" => Parties::PlaidCymru,
             "SNP" => Parties::ScottishNational,
-            _ => Parties::Other
+            _ => Parties::Other,
         }
     }
 }
 
-
 impl Parties {
-    pub fn colour(&self) -> &'static str{
+    pub fn colour(&self) -> &'static str {
         match self {
             Parties::Labour => "red",
             Parties::Conservatives => "blue",
@@ -57,12 +71,11 @@ impl Parties {
 }
 
 #[derive(Debug)]
-pub struct Party{
+pub struct Party {
     pub name: Parties,
     pub colour: String,
-    pub logo_file: Option<String>
+    pub logo_file: Option<String>,
 }
-
 
 impl Party {
     pub fn new(party_string: &str) -> Self {

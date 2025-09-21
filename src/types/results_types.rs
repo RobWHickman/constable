@@ -1,5 +1,3 @@
-use csv::StringRecord;
-
 use crate::types::geographic_types::Constituency;
 use crate::types::party_types::Party;
 
@@ -15,9 +13,3 @@ pub struct ConstituencyResult{
     pub majority: i64,
     pub results: Vec<PartyResult>
 }
-
-// impl ConstituencyResult {
-//     pub fn new(data_row: StringRecord) -> Self {
-
-//     }
-// }
